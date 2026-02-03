@@ -9,10 +9,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ASP.NET_WEB_API_Task1.Migrations
+namespace ASP.NET_WEB_API_Task1.DAL.Migrations
 {
     [DbContext(typeof(APIDbContext))]
-    [Migration("20260202184326_init")]
+    [Migration("20260203065451_init")]
     partial class init
     {
         /// <inheritdoc />

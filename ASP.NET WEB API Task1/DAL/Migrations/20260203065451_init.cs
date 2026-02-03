@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ASP.NET_WEB_API_Task1.Migrations
+namespace ASP.NET_WEB_API_Task1.DAL.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration
