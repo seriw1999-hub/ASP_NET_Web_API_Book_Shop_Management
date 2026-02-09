@@ -9,7 +9,8 @@ namespace ASP.NET_WEB_API_Task1.Controller
     [Route("api/[controller]")]
     [ApiController]
     public class BooksController : ControllerBase
-    {private readonly DAL.APIDbContext _context;
+    {
+        private readonly DAL.APIDbContext _context;
         public BooksController(DAL.APIDbContext context)
         {
             _context = context;
@@ -35,6 +36,22 @@ namespace ASP.NET_WEB_API_Task1.Controller
             await _context.SaveChangesAsync();
             return NoContent();
 
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteBook(DeleteBookDto bookdto)
+        {
+            // Kitabı ID ilə tapırıq
+            var deletedBook = await _context.Books.FindAsync(bookdto.Id);
+            _context.Books.Remove(deletedBook);
+            await _context.SaveChangesAsync();
+
+            return Ok(); // Uğurlu nəticə
+        }
+
+        public class DeleteBookDto
+        {
+            public int Id { get; set; }
         }
     }
 }

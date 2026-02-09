@@ -7,5 +7,6 @@
         public string Desc { get; set; }
         public decimal Price { get; set; }
         public DateTime CreatedAt { get; set; }
+        public object deletedBook { get; internal set; }
     }
 }
