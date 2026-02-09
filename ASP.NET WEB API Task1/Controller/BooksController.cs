@@ -34,19 +34,29 @@ namespace ASP.NET_WEB_API_Task1.Controller
             };
             await _context.Books.AddAsync(book);
             await _context.SaveChangesAsync();
-            return NoContent();
+            return NoContentResult();
 
+        }
+
+        private IActionResult NoContentResult()
+        {
+            throw new NotImplementedException();
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteBook(DeleteBookDto bookdto)
         {
-            // Kitabı ID ilə tapırıq
+           
             var deletedBook = await _context.Books.FindAsync(bookdto.Id);
             _context.Books.Remove(deletedBook);
             await _context.SaveChangesAsync();
 
-            return Ok(); // Uğurlu nəticə
+            return Ok(); 
+        }
+
+        private IActionResult Ok()
+        {
+            throw new NotImplementedException();
         }
 
         public class DeleteBookDto
