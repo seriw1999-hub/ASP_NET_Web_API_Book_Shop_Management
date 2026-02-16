@@ -10,10 +10,6 @@ Built with ASP.NET Core 8 + Entity Framework Core + SQL Server LocalDB.
 - PUT /api/books/{id} — Update book
 - DELETE /api/books/{id} — Delete book
 
-## Setup
-1. Verify connection string in `appsettings.json`
-2. Run `dotnet ef database update`
-3. Run `dotnet run`
 
 ## Future Plans (will evolve as course progresses)
 - [ ] JWT Authentication
